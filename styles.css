@@ -774,6 +774,118 @@ body::before {
   border-top: 1px solid var(--border-subtle);
 }
 
+/* Pricing Section */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 16px;
+  right: -32px;
+  background: linear-gradient(90deg, #e05194, #8b5cf6);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 6px 40px;
+  transform: rotate(45deg);
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(224, 81, 148, 0.4);
+}
+
+.pricing-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.pricing-price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price-strikethrough {
+  font-size: 1.4rem;
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.pricing-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pricing-features li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.btn-pricing {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+}
+
+.btn-pricing:hover {
+  background: #e2e8f0;
+  transform: scale(1.02);
+}
+
+.btn-pricing-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--border-strong);
+}
+
+.btn-pricing-outline:hover {
+  background: var(--border-subtle);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .products-grid, .install-grid, .research-row { grid-template-columns: 1fr; }
