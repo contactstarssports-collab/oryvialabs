@@ -5,7 +5,38 @@ document.addEventListener('DOMContentLoaded', () => {
   initTerminalSimulator();
   initCopyButtons();
   initNavigation();
+  initScrollAnimations();
 });
+
+// ── Intersection Observer for Scroll Animations ──
+function initScrollAnimations() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Auto-attach animation classes to main elements
+  document.querySelectorAll('.stealth-panel, .section-head, .terminal-block, .benchmark-table-wrapper').forEach((el, index) => {
+    el.classList.add('animate-on-scroll');
+    // Stagger delays based on index (just a simple stagger effect)
+    if (index % 3 === 1) el.classList.add('delay-100');
+    if (index % 3 === 2) el.classList.add('delay-200');
+  });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+}
 
 // ── Three.js Stealth Wireframe 3D Scene (Single Signature Core Geometry) ─────
 let scene, camera, renderer, heroMesh, particles;

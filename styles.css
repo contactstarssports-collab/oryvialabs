@@ -886,6 +886,23 @@ body::before {
   background: var(--border-subtle);
 }
 
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay modifiers for staggered animations */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
 /* Responsive */
 @media (max-width: 900px) {
   .products-grid, .install-grid, .research-row { grid-template-columns: 1fr; }
