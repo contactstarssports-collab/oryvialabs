@@ -682,6 +682,98 @@ body::before {
   color: #fff;
 }
 
+/* Benchmark Table Stealth Styling */
+.benchmark-table-wrapper {
+  margin-top: 3rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benchmark-table-wrapper:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 30px rgba(167, 139, 250, 0.05);
+}
+
+.benchmark-table-header {
+  background: rgba(139, 92, 246, 0.05);
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.benchmark-table-title {
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-secondary);
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.benchmark-table th {
+  padding: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+  background: rgba(0,0,0,0.3);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.benchmark-table td {
+  padding: 16px;
+  transition: color 0.2s;
+}
+
+.benchmark-table tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.2s ease;
+}
+
+.benchmark-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.benchmark-table tr.highlight-row {
+  background: rgba(224, 81, 148, 0.05);
+  border-bottom: 1px solid rgba(224, 81, 148, 0.2);
+}
+
+.benchmark-table tr.highlight-row:hover {
+  background: rgba(224, 81, 148, 0.1);
+}
+
+.benchmark-table tr.highlight-row td {
+  color: #fff;
+  font-weight: bold;
+}
+
+.benchmark-table tr.highlight-row td:first-child {
+  color: #e05194;
+}
+
+.benchmark-footnote {
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-align: right;
+  background: rgba(0,0,0,0.1);
+  border-top: 1px solid var(--border-subtle);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .products-grid, .install-grid, .research-row { grid-template-columns: 1fr; }
